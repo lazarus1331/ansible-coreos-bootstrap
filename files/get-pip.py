@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/core/bin/python
 #
 # Hi There!
 # You may be wondering what this giant blob of binary data here is, you might
