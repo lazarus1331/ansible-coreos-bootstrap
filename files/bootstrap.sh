@@ -8,16 +8,10 @@ if [[ -e $HOME/.bootstrapped ]]; then
   exit 0
 fi
 
-PYPY_VERSION=2.4.0
+# get portable version of 2.7
+wget -q -O - https://bitbucket.org/squeaky/portable-pypy/downloads/pypy-4.0.1-linux_x86_64-portable.tar.bz2|tar -xjf -
 
-if [[ -e $HOME/pypy-$PYPY_VERSION-linux64.tar.bz2 ]]; then
-  tar -xjf $HOME/pypy-$PYPY_VERSION-linux64.tar.bz2
-  rm -rf $HOME/pypy-$PYPY_VERSION-linux64.tar.bz2
-else
-  wget -O - https://bitbucket.org/pypy/pypy/downloads/pypy-$PYPY_VERSION-linux64.tar.bz2 |tar -xjf -
-fi
-
-mv -n pypy-$PYPY_VERSION-linux64 pypy
+mv -n pypy-4.0.1-linux_x86_64-portable pypy
 
 ## library fixup
 mkdir -p pypy/lib
