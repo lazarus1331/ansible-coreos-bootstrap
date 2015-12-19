@@ -29,3 +29,8 @@
 - name: Install pip launcher
   copy: src=runner dest=~/bin/pip mode=0755
   when: need_pip | failed
+
+- name: Install docker-py 1.4
+  shell: "pip install docker-py==1.4"
+  when: need_bootstrap | failed
+
